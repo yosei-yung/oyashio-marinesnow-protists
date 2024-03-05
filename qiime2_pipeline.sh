@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OUT_DIR="/aptmp/ideas2/qingwei/KS-21/01_18S/"
+OUT_DIR="/path/01_18S/"
 MANIFEST="qiime_manifest_20220202_ks21.txt"
 METADATA_FILE="KS-21_18S_metadata.tsv"
 
@@ -35,13 +35,13 @@ wget https://github.com/pr2database/pr2database/releases/download/v5.0.0/pr2_ver
 wget https://github.com/pr2database/pr2database/releases/download/v5.0.0/pr2_version_5.0.0_SSU_mothur.tax.gz
 
 # import sequence file
-PR2_FILE="/aptmp/ideas2/qingwei/KS-21/01_18S/PR2v5/pr2_version_5.0.0_SSU_mothur.fasta"
+PR2_FILE="/path/PR2v5/pr2_version_5.0.0_SSU_mothur.fasta"
 qiime tools import \
   --type 'FeatureData[Sequence]' \
   --input-path ${PR2_FILE} \
   --output-path ${OUT_DIR}out3-pr2_version_5.0.0_SSU_mothur.qza
 # Import taxomony file
-PR_FILE_TAX="/aptmp/ideas2/qingwei/KS-21/01_18S/PR2v5/pr2_version_5.0.0_SSU_mothur.tax"
+PR_FILE_TAX="/path/pr2_version_5.0.0_SSU_mothur.tax"
 qiime tools import \
   --type 'FeatureData[Taxonomy]' \
   --input-path ${PR_FILE_TAX} \
